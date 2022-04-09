@@ -10,7 +10,7 @@ int main(int argc, char *argv[]){
     FILE *fp = fopen(argv[i], "r");
     if(fp == NULL)
     {
-      printf("wcat: cannot open file\n");
+      printf("my-cat: cannot open file\n");
       exit(1);
     }
     while(fgets(str, 150, fp))
