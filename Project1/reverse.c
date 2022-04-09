@@ -24,28 +24,28 @@ int main(int argc, char *argv[]) {
     // Check if the files are same
     //https://www.programiz.com/c-programming/library-function/string.h/strcmp
     if (strcmp(argv[1],argv[2]) == 0) {
-      fprintf(stderr, "error: input and output file must differ\n");
+      fprintf(stderr, "reverse: input and output file must differ\n");
       exit(1);
     }
     // Check if the readable file is openable / exists
     if ((in = fopen(argv[1], "r")) == NULL) {
-      fprintf(stderr, "error: cannot open file '%s'\n", argv[1]);
+      fprintf(stderr, "reverse: cannot open file '%s'\n", argv[1]);
       exit(1);
     }
     // Check if the writable file is openable / exists
     if ((out = fopen(argv[2], "w")) == NULL) {
-      fprintf(stderr, "error: cannot open file '%s'\n", argv[2]);
+      fprintf(stderr, "reverse: cannot open file '%s'\n", argv[2]);
       exit(1);
     }
     // Check if there is 2 arguments given in the command line parameter
   } else if (argc == 2) {
     //Check if the readable file is openable / exists
     if ((in = fopen(argv[1], "r")) == NULL) {
-      fprintf(stderr, "error: cannot open file '%s'\n", argv[1]);
+      fprintf(stderr, "reverse: cannot open file '%s'\n", argv[1]);
       exit(1);
     }  
-    // Check if there is more tan 3 arguments or none given in the command line parameter
-  } else if (argc > 3 || argc == 1) {
+    // Check if there is more than 3 arguments
+  } else if (argc > 3 ) {
     fprintf(stderr, "usage: reverse <input> <output>\n");
     exit(1);
   }
