@@ -17,7 +17,9 @@ int main(int argc, char *argv[]){
       exit(1);
     }
   while(fread(buffer, 4, 1, fp)){
+    //put the read buffer into count so we can use same buffer to read characters
     int count = *buffer;
+    //set buffer empty
     memset(buffer, 0, strlen(buffer));
     fread(buffer, 1, 1, fp);
     for(j = 0; j < count; j++){
